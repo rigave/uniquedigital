@@ -1,0 +1,163 @@
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading-primary {
+    font-size: 4rem;
+  }
+
+  .heading-secondary {
+    font-size: 2.4rem;
+  }
+
+  .container {
+    padding: 0 2.4rem;
+    margin: 0 auto;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header label {
+    display: block;
+  }
+
+  .header .logo img {
+    height: 3.2rem;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav__item {
+    width: 100%;
+  }
+
+  .dropdown__list {
+    position: relative;
+    width: 100%;
+    transform: translateX(20px);
+    box-shadow: none;
+  }
+
+  .mobile-btn-nav {
+    display: inline-block;
+  }
+
+  #menu-bar:checked ~ .nav {
+    max-height: 300px; /* Smooth dropdown effect */
+  }
+
+  #menu-bar:checked ~ .mobile-btn-nav::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  #menu-bar:checked ~ .mobile-btn-nav::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  #menu-bar:checked ~ .mobile-btn-nav {
+    background-color: transparent;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .nav__link,
+  .dropdown__link {
+    font-size: 1.6rem;
+    padding: 1.5rem;
+  }
+
+  .cta-container,
+  .cta-form {
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem;
+  }
+
+  .cta-form {
+    row-gap: 2.4rem;
+  }
+
+  .cta-container iframe {
+    height: 250px;
+  }
+
+  .cta-content {
+    padding: 2.4rem 3.2rem;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin-top: 4.8rem;
+  }
+
+  .section-hero {
+    height: 80vh;
+  }
+
+  .section-about {
+    padding: 2.4rem 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+
+  .about-gallery {
+    grid-row: 2;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+    font-size: 1.6rem;
+    padding: 2.4rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3.2rem;
+    column-gap: 2.4rem;
+  }
+
+  .swiper {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logo-col {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-col > img {
+    width: 75%;
+  }
+
+  .address-col {
+    grid-column: 1 / -1;
+  }
+}
