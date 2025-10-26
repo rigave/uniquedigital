@@ -436,7 +436,7 @@
               <div class="subheading">Contact Us</div>
               <h2 class="heading-secondary">Call for connect with us</h2>
 
-              <form action="#" class="cta-form">
+              <form id="myForm" class="cta-form">
                 <div>
                   <input
                     type="text"
@@ -460,6 +460,7 @@
                 <div>
                   <input
                     type="text"
+                    name="contact"
                     class="contact"
                     placeholder="+91 00000-00000" />
                   <label class="cta-label" for="contact" class="contact"
@@ -567,6 +568,21 @@
         </div>
       </div>
     </footer>
+
+    <script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  fetch("https://script.google.com/macros/s/AKfycbx_7iywM-XqQ1uJAXy5GpCZW6LD0fDBE_bFhvrEZCRAsj0z5Rqj3owRIHKg_U8gFile/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: this.full-name.value,
+      email: this.email.value,
+      message: this.message.value,
+      contact: this.contact.value
+    })
+  }).then(response => response.text()).then(data => alert(data));
+});
+</script>
 
     <script src="script.js"></script>
   </body>
