@@ -572,13 +572,14 @@
     <script>
 document.getElementById("myForm").addEventListener("submit", function(e){
   e.preventDefault();
-  fetch("https://script.google.com/macros/s/AKfycbx_7iywM-XqQ1uJAXy5GpCZW6LD0fDBE_bFhvrEZCRAsj0z5Rqj3owRIHKg_U8gFile/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwBCCd8AYB8ltwpMAPuijgPLinNNKsJepXx0KBenQwfPfPrNnj56SXMOC9yke9kyvSg/exec", {
     method: "POST",
     body: JSON.stringify({
       name: this.full-name.value,
       email: this.email.value,
       message: this.message.value,
-      contact: this.contact.value
+      contact: this.contact.value,
+      service: this.service.value
     })
   }).then(response => response.text()).then(data => alert(data));
 });
