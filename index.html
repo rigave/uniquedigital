@@ -575,7 +575,7 @@ document.getElementById("myForm").addEventListener("submit", function(e){
   fetch("https://script.google.com/macros/s/AKfycbwBCCd8AYB8ltwpMAPuijgPLinNNKsJepXx0KBenQwfPfPrNnj56SXMOC9yke9kyvSg/exec", {
     method: "POST",
     body: JSON.stringify({
-      name: this.full-name.value,
+      name: this.name.value,
       email: this.email.value,
       message: this.message.value,
       contact: this.contact.value,
