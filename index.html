@@ -570,34 +570,28 @@
     </footer>
 
     <script>
-const form = document.getElementById("myForm");
-
-form.addEventListener("submit", async function (e) {
+document.getElementById("myForm").addEventListener("submit", function(e){
   e.preventDefault();
-
-  try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbwCTpveCaiY2cm51irR7x6p7wO3EHAEnQIu6QCR41eytI0So0qsS9x_53vrMHGEsxI1mw/exec", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "text/plain" },
-      body: JSON.stringify({
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-        contact: form.contact.value,
-        service: form.service.value
-      })
-    });
-
-    // Optional: check status
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-    const data = await res.text();   // or res.json() if your GAS returns JSON
-    alert(data || "Submitted!");
-    
-    form.reset(); // reset AFTER success
-  } catch (err) {
-    alert("Submission failed. " + err.message);
-  }
+  fetch("https://script.google.com/macros/s/AKfycbwCTpveCaiY2cm51irR7x6p7wO3EHAEnQIu6QCR41eytI0So0qsS9x_53vrMHGEsxI1mw/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: this.name.value,
+      email: this.email.value,
+      message: this.message.value,
+      contact: this.contact.value,
+      service: this.service.value
+    })
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert(data);
+    this.name.value = ""
+    this.email.value = ""
+    this.message.value = ""
+    this.contact.value = ""
+    this.service.value = ""
+  })
+  .catch(err => alert("Submission failed: " + err));
 });
 </script>
 
