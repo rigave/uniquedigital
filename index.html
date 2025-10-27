@@ -581,6 +581,7 @@ document.getElementById("myForm").addEventListener("submit", function(e){
       contact: this.contact.value,
       service: this.service.value
     })
+    this.name.value = this.email.value = this.message.value = this.contact.value = this.service.value = "";
   }).then(response => response.text()).then(data => alert(data));
 });
 </script>
