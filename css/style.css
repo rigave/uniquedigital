@@ -964,3 +964,65 @@ address a {
   color: var(--color-primary);
   text-decoration: underline;
 }
+/* =========================== */
+/* ✨ Form Popup Modal Style ✨ */
+/* =========================== */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.popup-box {
+  background-color: #fff;
+  color: var(--color-text);
+  border-radius: 9px;
+  padding: 3.2rem 4.8rem;
+  max-width: 90%;
+  width: 40rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-message {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  line-height: 1.6;
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.6rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
